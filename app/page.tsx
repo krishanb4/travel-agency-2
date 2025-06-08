@@ -1,13 +1,36 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Calendar } from "@/components/ui/calendar"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { CalendarIcon, ChevronRight, Globe, MapPin, Plane, Search, Star, Users, Briefcase, Car } from "lucide-react"
-import { HeroCarousel } from "@/components/hero-carousel"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
+  CalendarIcon,
+  ChevronRight,
+  Globe,
+  MapPin,
+  Plane,
+  Search,
+  Star,
+  Users,
+  Briefcase,
+  Car,
+  Clock,
+  Headphones,
+  Zap,
+  DollarSign,
+  Mail,
+  Gift,
+  Settings,
+  Check,
+} from "lucide-react";
+import { HeroCarousel } from "@/components/hero-carousel";
 
 export default function Home() {
   const heroImages = [
@@ -16,7 +39,7 @@ export default function Home() {
     "/images/hero-3.png",
     "/images/hero-4.png",
     "/images/hero-5.png",
-  ]
+  ];
 
   const heroTitles = [
     "Discover breathtaking landscapes",
@@ -24,7 +47,7 @@ export default function Home() {
     "Explore exotic destinations",
     "Journey through scenic railways",
     "Visit ancient wonders",
-  ]
+  ];
 
   const heroDescriptions = [
     "Immerse yourself in the beauty of nature with our curated mountain expeditions",
@@ -32,7 +55,7 @@ export default function Home() {
     "Discover unique cultures and create memories that last a lifetime",
     "Travel in comfort through some of the world's most scenic railway routes",
     "Step back in time and explore ancient civilizations and historic sites",
-  ]
+  ];
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -49,22 +72,40 @@ export default function Home() {
             />
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="#" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="#"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
               Home
             </Link>
-            <Link href="#" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="#"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
               Destinations
             </Link>
-            <Link href="#" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="#"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
               Tours
             </Link>
-            <Link href="#" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="#"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
               Services
             </Link>
-            <Link href="#" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="#"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
               About Us
             </Link>
-            <Link href="#" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="#"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
               Contact
             </Link>
           </nav>
@@ -97,148 +138,22 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero Section with Carousel */}
-        <HeroCarousel images={heroImages} titles={heroTitles} descriptions={heroDescriptions} />
-
-        {/* Search Section */}
-        <section className="container relative -mt-24 z-10 mb-16">
-          <div className="bg-white rounded-xl shadow-xl p-6">
-            <Tabs defaultValue="flights" className="w-full">
-              <TabsList className="grid w-full grid-cols-3 mb-6">
-                <TabsTrigger value="flights" className="text-sm sm:text-base">
-                  <Plane className="h-4 w-4 mr-2" />
-                  Flights
-                </TabsTrigger>
-                <TabsTrigger value="hotels" className="text-sm sm:text-base">
-                  <MapPin className="h-4 w-4 mr-2" />
-                  Hotels
-                </TabsTrigger>
-                <TabsTrigger value="packages" className="text-sm sm:text-base">
-                  <Globe className="h-4 w-4 mr-2" />
-                  Packages
-                </TabsTrigger>
-              </TabsList>
-              <TabsContent value="flights" className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">From</label>
-                    <Input placeholder="City or Airport" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">To</label>
-                    <Input placeholder="City or Airport" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Departure</label>
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <Button variant="outline" className="w-full justify-start text-left font-normal">
-                          <CalendarIcon className="mr-2 h-4 w-4" />
-                          <span>Pick a date</span>
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-auto p-0">
-                        <Calendar mode="single" />
-                      </PopoverContent>
-                    </Popover>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Travelers</label>
-                    <Button variant="outline" className="w-full justify-start">
-                      <Users className="mr-2 h-4 w-4" />
-                      <span>2 Adults, 0 Children</span>
-                    </Button>
-                  </div>
-                </div>
-                <Button className="w-full sm:w-auto">
-                  <Search className="mr-2 h-4 w-4" />
-                  Search Flights
-                </Button>
-              </TabsContent>
-              <TabsContent value="hotels" className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                  <div className="space-y-2 md:col-span-2">
-                    <label className="text-sm font-medium">Destination</label>
-                    <Input placeholder="City or Hotel" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Check-in</label>
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <Button variant="outline" className="w-full justify-start text-left font-normal">
-                          <CalendarIcon className="mr-2 h-4 w-4" />
-                          <span>Pick a date</span>
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-auto p-0">
-                        <Calendar mode="single" />
-                      </PopoverContent>
-                    </Popover>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Check-out</label>
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <Button variant="outline" className="w-full justify-start text-left font-normal">
-                          <CalendarIcon className="mr-2 h-4 w-4" />
-                          <span>Pick a date</span>
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-auto p-0">
-                        <Calendar mode="single" />
-                      </PopoverContent>
-                    </Popover>
-                  </div>
-                </div>
-                <Button className="w-full sm:w-auto">
-                  <Search className="mr-2 h-4 w-4" />
-                  Search Hotels
-                </Button>
-              </TabsContent>
-              <TabsContent value="packages" className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Destination</label>
-                    <Input placeholder="Where do you want to go?" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Travel Dates</label>
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <Button variant="outline" className="w-full justify-start text-left font-normal">
-                          <CalendarIcon className="mr-2 h-4 w-4" />
-                          <span>Select dates</span>
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-auto p-0">
-                        <Calendar mode="range" />
-                      </PopoverContent>
-                    </Popover>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Package Type</label>
-                    <select className="w-full h-10 px-3 py-2 bg-background border border-input rounded-md">
-                      <option>All Inclusive</option>
-                      <option>Flight + Hotel</option>
-                      <option>Cruise Package</option>
-                      <option>Adventure Tour</option>
-                    </select>
-                  </div>
-                </div>
-                <Button className="w-full sm:w-auto">
-                  <Search className="mr-2 h-4 w-4" />
-                  Find Packages
-                </Button>
-              </TabsContent>
-            </Tabs>
-          </div>
-        </section>
+        <HeroCarousel
+          images={heroImages}
+          titles={heroTitles}
+          descriptions={heroDescriptions}
+        />
 
         {/* Featured Destinations */}
         <section className="container py-16">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight">Featured Destinations</h2>
-              <p className="text-muted-foreground mt-2">Explore our handpicked destinations for your next adventure</p>
+              <h2 className="text-3xl font-bold tracking-tight">
+                Featured Destinations
+              </h2>
+              <p className="text-muted-foreground mt-2">
+                Explore our handpicked destinations for your next adventure
+              </p>
             </div>
             <Button variant="link" className="mt-2 md:mt-0 p-0">
               View all destinations
@@ -248,9 +163,21 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: "Maldives", image: "/images/hero-1.png", price: "$1,299" },
-              { name: "Sigiriya, Sri Lanka", image: "/images/hero-5.png", price: "$1,499" },
-              { name: "Safari Adventure", image: "/images/hero-3.png", price: "$999" },
+              {
+                name: "Nuwara Eliya, Sri Lanka",
+                image: "/images/hero-1.png",
+                price: "$1,299",
+              },
+              {
+                name: "Sigiriya, Sri Lanka",
+                image: "/images/hero-5.png",
+                price: "$1,499",
+              },
+              {
+                name: "Safari Adventure",
+                image: "/images/hero-3.png",
+                price: "$999",
+              },
             ].map((destination, index) => (
               <Card key={index} className="overflow-hidden group">
                 <div className="relative h-64 overflow-hidden">
@@ -262,10 +189,15 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-xl font-semibold text-white">{destination.name}</h3>
+                    <h3 className="text-xl font-semibold text-white">
+                      {destination.name}
+                    </h3>
                     <div className="flex justify-between items-center mt-2">
                       <p className="text-white/90">
-                        Starting from <span className="font-bold text-white">{destination.price}</span>
+                        Starting from{" "}
+                        <span className="font-bold text-white">
+                          {destination.price}
+                        </span>
                       </p>
                       <Button
                         size="sm"
@@ -282,73 +214,82 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services Section */}
+        {/* New Premium Services Section */}
         <section className="bg-muted py-16">
           <div className="container">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight">Our Premium Services</h2>
+              <h2 className="text-3xl font-bold tracking-tight">
+                Our Premium Services
+              </h2>
               <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-                We offer a wide range of services to make your travel experience seamless and memorable
+                We offer exceptional services to make your travel experience
+                seamless and memorable
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
               {[
                 {
-                  title: "Flight Reservations",
-                  description: "Book domestic and international flights at competitive prices with flexible options.",
-                  icon: <Plane className="h-10 w-10 text-primary" />,
-                  image: "/images/hero-1.png",
+                  title: "Reservation service 24/7 7 days a week.",
+                  icon: <Clock className="h-6 w-6 text-green-600" />,
                 },
                 {
-                  title: "Luxury Accommodations",
-                  description: "Stay at handpicked premium hotels and resorts with exclusive amenities and services.",
-                  icon: <MapPin className="h-10 w-10 text-primary" />,
-                  image: "/images/tropical-beach.png",
+                  title:
+                    "Customized solutions to each client's travel requirements",
+                  icon: <Settings className="h-6 w-6 text-green-600" />,
                 },
                 {
-                  title: "Corporate Travel",
-                  description:
-                    "Specialized services for business travelers with priority support and executive benefits.",
-                  icon: <Briefcase className="h-10 w-10 text-primary" />,
-                  image: "/images/business-group.png",
+                  title:
+                    "24/7 customer service including out of office hours + holidays.",
+                  icon: <Headphones className="h-6 w-6 text-blue-600" />,
                 },
                 {
-                  title: "Airport Transfers",
-                  description: "Comfortable and reliable airport pickup and drop-off services at your destination.",
-                  icon: <Car className="h-10 w-10 text-primary" />,
-                  image: "/images/airport-transfer.png",
+                  title:
+                    "Multiple requirements and flexibility at every level of our client's itinerary",
+                  icon: <DollarSign className="h-6 w-6 text-green-600" />,
                 },
                 {
-                  title: "Guided Tours",
-                  description: "Explore destinations with expert local guides who bring stories and history to life.",
-                  icon: <Users className="h-10 w-10 text-primary" />,
-                  image: "/images/adventure-couple.png",
+                  title:
+                    "Speedy reporting on related travel services, including ticket, visas and all itinerary.",
+                  icon: <Zap className="h-6 w-6 text-orange-600" />,
                 },
                 {
-                  title: "24/7 Customer Support",
-                  description: "Round-the-clock assistance for any travel-related queries or emergencies.",
-                  icon: <Star className="h-10 w-10 text-primary" />,
-                  image: "/images/booking-tickets.png",
+                  title:
+                    "Customer feedback – email, social media and face-to-face",
+                  icon: <Mail className="h-6 w-6 text-green-600" />,
+                },
+                {
+                  title:
+                    "timely identification of cancelled flights and prompt re-booking",
+                  icon: <Plane className="h-6 w-6 text-purple-600" />,
+                },
+                {
+                  title:
+                    "Continuous availability of attractive special offers and packages",
+                  icon: <Gift className="h-6 w-6 text-green-600" />,
                 },
               ].map((service, index) => (
-                <Card key={index} className="overflow-hidden">
-                  <div className="relative h-40">
-                    <Image
-                      src={service.image || "/placeholder.svg"}
-                      alt={service.title}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="bg-white/90 p-3 rounded-full">{service.icon}</div>
+                <Card
+                  key={index}
+                  className="p-6 hover:shadow-lg transition-shadow"
+                >
+                  <div className="flex items-start gap-4">
+                    {/* Check mark and icon */}
+                    <div className="flex items-center gap-3 flex-shrink-0">
+                      <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center">
+                        <Check className="h-3 w-3 text-white" />
+                      </div>
+                      <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center">
+                        {service.icon}
+                      </div>
+                    </div>
+                    {/* Content */}
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-gray-900 leading-relaxed">
+                        {service.title}
+                      </h3>
                     </div>
                   </div>
-                  <CardContent className="pt-6">
-                    <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                    <p className="text-muted-foreground">{service.description}</p>
-                  </CardContent>
                 </Card>
               ))}
             </div>
@@ -367,16 +308,20 @@ export default function Home() {
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Beyond The Ocean Travel is a premier travel agency dedicated to providing exceptional travel
-                  experiences tailored to your preferences and dreams.
+                  Beyond The Ocean Travel is a premier travel agency dedicated
+                  to providing exceptional travel experiences tailored to your
+                  preferences and dreams.
                 </p>
                 <p>
-                  With over 15 years of experience in the travel industry, we've helped thousands of travelers explore
-                  the world's most beautiful destinations with personalized itineraries and premium services.
+                  With over 15 years of experience in the travel industry, we've
+                  helped thousands of travelers explore the world's most
+                  beautiful destinations with personalized itineraries and
+                  premium services.
                 </p>
                 <p>
-                  Our team of travel experts is passionate about creating seamless journeys that allow you to focus on
-                  making memories while we handle all the details.
+                  Our team of travel experts is passionate about creating
+                  seamless journeys that allow you to focus on making memories
+                  while we handle all the details.
                 </p>
               </div>
               <div className="mt-6 flex flex-wrap gap-4">
@@ -386,7 +331,9 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-semibold">25+</p>
-                    <p className="text-sm text-muted-foreground">Years Experience</p>
+                    <p className="text-sm text-muted-foreground">
+                      Years Experience
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
@@ -395,7 +342,9 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-semibold">100+</p>
-                    <p className="text-sm text-muted-foreground">Destinations</p>
+                    <p className="text-sm text-muted-foreground">
+                      Destinations
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
@@ -404,7 +353,9 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-semibold">10k+</p>
-                    <p className="text-sm text-muted-foreground">Happy Travelers</p>
+                    <p className="text-sm text-muted-foreground">
+                      Happy Travelers
+                    </p>
                   </div>
                 </div>
               </div>
@@ -428,8 +379,9 @@ export default function Home() {
                   <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
                 </div>
                 <p className="text-sm italic">
-                  "Beyond The Ocean made our honeymoon absolutely perfect. Every detail was taken care of, allowing us
-                  to simply enjoy our time together."
+                  "Beyond The Ocean made our honeymoon absolutely perfect. Every
+                  detail was taken care of, allowing us to simply enjoy our time
+                  together."
                 </p>
                 <p className="text-sm font-semibold mt-2">- Sarah & Michael</p>
               </div>
@@ -441,7 +393,9 @@ export default function Home() {
         <section className="bg-primary/5 py-16">
           <div className="container">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight">What Our Clients Say</h2>
+              <h2 className="text-3xl font-bold tracking-tight">
+                What Our Clients Say
+              </h2>
               <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
                 Hear from travelers who have experienced our services
               </p>
@@ -489,11 +443,15 @@ export default function Home() {
                     <p className="italic mb-4">{testimonial.text}</p>
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
-                        <span className="text-sm font-semibold">{testimonial.name.charAt(0)}</span>
+                        <span className="text-sm font-semibold">
+                          {testimonial.name.charAt(0)}
+                        </span>
                       </div>
                       <div>
                         <p className="font-semibold">{testimonial.name}</p>
-                        <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {testimonial.location}
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -508,7 +466,8 @@ export default function Home() {
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold tracking-tight">Endorsements</h2>
             <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-              We are proud to be recognized and endorsed by these prestigious organizations
+              We are proud to be recognized and endorsed by these prestigious
+              organizations
             </p>
           </div>
 
@@ -521,7 +480,9 @@ export default function Home() {
                 height={150}
                 className="mb-3"
               />
-              <p className="text-sm text-center font-medium">Sri Lanka Tourism Development Authority</p>
+              <p className="text-sm text-center font-medium">
+                Sri Lanka Tourism Development Authority
+              </p>
             </div>
 
             <div className="flex flex-col items-center">
@@ -532,7 +493,9 @@ export default function Home() {
                 height={150}
                 className="mb-3"
               />
-              <p className="text-sm text-center font-medium">Civil Aviation Authority Sri Lanka</p>
+              <p className="text-sm text-center font-medium">
+                Civil Aviation Authority Sri Lanka
+              </p>
             </div>
 
             <div className="flex flex-col items-center">
@@ -543,7 +506,9 @@ export default function Home() {
                 height={150}
                 className="mb-3"
               />
-              <p className="text-sm text-center font-medium">International Air Transport Association</p>
+              <p className="text-sm text-center font-medium">
+                International Air Transport Association
+              </p>
             </div>
 
             <div className="flex flex-col items-center">
@@ -554,7 +519,9 @@ export default function Home() {
                 height={150}
                 className="mb-3"
               />
-              <p className="text-sm text-center font-medium">Department of the Registrar of Companies</p>
+              <p className="text-sm text-center font-medium">
+                Department of the Registrar of Companies
+              </p>
             </div>
           </div>
         </section>
@@ -564,10 +531,12 @@ export default function Home() {
           <div className="bg-primary rounded-2xl p-8 md:p-12 relative overflow-hidden">
             <div className="absolute inset-0 bg-[url('/images/tropical-beach.png')] opacity-20 mix-blend-overlay bg-cover bg-center" />
             <div className="relative z-10 max-w-2xl">
-              <h2 className="text-3xl font-bold tracking-tight text-white mb-4">Ready to start your next adventure?</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-white mb-4">
+                Ready to start your next adventure?
+              </h2>
               <p className="text-white/90 mb-6">
-                Let us help you plan the perfect getaway. Our travel experts are ready to create a personalized
-                itinerary just for you.
+                Let us help you plan the perfect getaway. Our travel experts are
+                ready to create a personalized itinerary just for you.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button size="lg" variant="secondary">
@@ -589,9 +558,12 @@ export default function Home() {
         <section className="bg-muted py-12">
           <div className="container">
             <div className="max-w-xl mx-auto text-center">
-              <h3 className="text-2xl font-bold tracking-tight mb-2">Subscribe to our newsletter</h3>
+              <h3 className="text-2xl font-bold tracking-tight mb-2">
+                Subscribe to our newsletter
+              </h3>
               <p className="text-muted-foreground mb-6">
-                Get travel inspiration, exclusive offers, and tips delivered straight to your inbox
+                Get travel inspiration, exclusive offers, and tips delivered
+                straight to your inbox
               </p>
               <div className="flex gap-2 max-w-md mx-auto">
                 <Input placeholder="Enter your email" className="bg-white" />
@@ -604,8 +576,9 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white pt-16 pb-8">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* Company Info Section */}
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Image
@@ -616,11 +589,17 @@ export default function Home() {
                   className="h-10 w-auto bg-white p-1 rounded"
                 />
               </div>
-              <p className="text-gray-400 mb-4">
-                Creating unforgettable travel experiences since 2007. Your journey begins with us.
+              <p className="text-gray-400 mb-4 leading-relaxed">
+                Beyond the Ocean Travel (Pvt) Ltd., was incorporated by the
+                Companies Act No. 7 of 2007 of Sri Lanka on 17 th of July 2020
+                under PV 00224427 to service the growing demand within the
+                Travel and Tourism sector of Sri Lanka.
               </p>
               <div className="flex gap-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -635,7 +614,10 @@ export default function Home() {
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                   </svg>
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -647,156 +629,244 @@ export default function Home() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <rect
+                      x="2"
+                      y="2"
+                      width="20"
+                      height="20"
+                      rx="5"
+                      ry="5"
+                    ></rect>
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                   </svg>
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-                  </svg>
-                </a>
               </div>
             </div>
+
+            {/* Pages and Newsletter Section */}
             <div>
-              <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
-              <ul className="space-y-2">
+              <h4 className="font-semibold text-lg mb-4">Pages</h4>
+              <ul className="space-y-2 mb-8">
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Home
+                  <Link
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    HOME
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                    About Us
+                  <Link
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    ABOUT US
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Destinations
+                  <Link
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    OUR SERVICES
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Tours
+                  <Link
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    OUR VALUES
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Blog
+                  <Link
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    ENDORSEMENTS
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Contact
+                  <Link
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    CONTACT US
                   </Link>
                 </li>
               </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-lg mb-4">Services</h4>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Flight Booking
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Hotel Reservations
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Vacation Packages
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Cruise Bookings
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Travel Insurance
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Visa Assistance
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-lg mb-4">Contact Us</h4>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <MapPin className="h-5 w-5 text-gray-400 mt-0.5" />
-                  <span className="text-gray-400">123 Travel Street, Colombo, Sri Lanka</span>
-                </li>
-                <li className="flex items-start gap-3">
+
+              {/* Newsletter Section */}
+              <div>
+                <h4 className="font-semibold text-lg mb-2 flex items-center gap-2">
+                  Newsletter
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
+                    className="w-4 h-4 text-green-500"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-gray-400 mt-0.5"
+                    viewBox="0 0 24 24"
                   >
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                    />
                   </svg>
-                  <span className="text-gray-400">+94 123 456 7890</span>
+                </h4>
+                <p className="text-gray-400 mb-4">
+                  Subscribe our newsletter to get our latest update & news.
+                </p>
+                <form className="flex gap-2 mb-3">
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    className="flex-1 px-3 py-2 bg-gray-800 text-white rounded border border-gray-700 focus:border-green-500 focus:outline-none"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded transition-colors"
+                  >
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                      />
+                    </svg>
+                  </button>
+                </form>
+                <div className="flex items-center gap-2 text-sm text-gray-400">
+                  <svg
+                    className="w-4 h-4 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span>I agree to all terms and policies</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Section */}
+            <div>
+              <h4 className="font-semibold text-lg mb-4">Contact</h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg
+                      className="w-5 h-5 text-green-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-white font-medium mb-1">Drop a Line</p>
+                    <p className="text-gray-400">+94 (0) 11 276 7184</p>
+                    <p className="text-gray-400">+94 (0) 11 276 5040</p>
+                  </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-gray-400 mt-0.5"
-                  >
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
-                  </svg>
-                  <span className="text-gray-400">info@beyondtheocean.com</span>
+                  <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg
+                      className="w-5 h-5 text-green-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-white font-medium mb-1">Email Address</p>
+                    <p className="text-gray-400">info@btotravel.lk</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg
+                      className="w-5 h-5 text-green-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-white font-medium mb-1">Visit office</p>
+                    <p className="text-gray-400">
+                      11A Prathibimbarama Road, Kalubowila Dehiwala, Mount
+                      Lavinia.
+                    </p>
+                  </div>
                 </li>
               </ul>
             </div>
           </div>
+
+          {/* Footer Bottom */}
           <div className="border-t border-gray-800 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-400 text-sm">
-                &copy; {new Date().getFullYear()} Beyond The Ocean Travel. All rights reserved.
+                &copy; {new Date().getFullYear()} Beyond The Ocean Travel. All
+                rights reserved.
               </p>
               <div className="flex gap-4 mt-4 md:mt-0">
-                <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                >
                   Privacy Policy
                 </Link>
-                <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                >
                   Terms of Service
                 </Link>
-                <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                >
                   Cookie Policy
                 </Link>
               </div>
@@ -805,5 +875,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
