@@ -1,41 +1,49 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 interface CarouselProps {
-  images: string[]
-  interval?: number
-  titles?: string[]
-  descriptions?: string[]
+  images: string[];
+  interval?: number;
+  titles?: string[];
+  descriptions?: string[];
 }
 
-export function HeroCarousel({ images, interval = 5000, titles = [], descriptions = [] }: CarouselProps) {
-  const [currentIndex, setCurrentIndex] = useState(0)
+export function HeroCarousel({
+  images,
+  interval = 5000,
+  titles = [],
+  descriptions = [],
+}: CarouselProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-  }
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
-  }
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
+  };
 
   const goToSlide = (index: number) => {
-    setCurrentIndex(index)
-  }
+    setCurrentIndex(index);
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
-      goToNext()
-    }, interval)
+      goToNext();
+    }, interval);
 
     return () => {
-      clearInterval(timer)
-    }
-  }, [interval])
+      clearInterval(timer);
+    };
+  }, [interval]);
 
   return (
     <div className="relative h-[85vh] overflow-hidden">
@@ -64,17 +72,21 @@ export function HeroCarousel({ images, interval = 5000, titles = [], description
                     "Curated travel experiences that transform your journey into unforgettable memories"}
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
-                  <Button size="lg" className="gap-2">
-                    Explore Destinations
-                    <ChevronRight className="h-4 w-4" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="bg-white/10 text-white border-white/20 hover:bg-white/20"
-                  >
-                    View Special Offers
-                  </Button>
+                  <Link href="/destinations">
+                    <Button size="lg" className="gap-2">
+                      Explore Destinations
+                      <ChevronRight className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                  <Link href="/services">
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="bg-white/10 text-white border-white/20 hover:bg-white/20"
+                    >
+                      View Special Offers
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -109,11 +121,13 @@ export function HeroCarousel({ images, interval = 5000, titles = [], description
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${index === currentIndex ? "bg-white w-8" : "bg-white/50"}`}
+            className={`w-3 h-3 rounded-full transition-all ${
+              index === currentIndex ? "bg-white w-8" : "bg-white/50"
+            }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
     </div>
-  )
+  );
 }
