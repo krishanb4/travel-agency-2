@@ -227,7 +227,7 @@ export default function Services() {
               Services
             </Link>
             <Link
-              href="/about"
+              href="/about-us"
               className="text-sm font-medium hover:text-primary transition-colors"
             >
               About Us

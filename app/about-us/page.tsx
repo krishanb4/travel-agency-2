@@ -194,7 +194,7 @@ export default function About() {
             >
               Services
             </Link>
-            <Link href="/about" className="text-sm font-medium text-primary">
+            <Link href="/about-us" className="text-sm font-medium text-primary">
               About Us
             </Link>
             <Link
