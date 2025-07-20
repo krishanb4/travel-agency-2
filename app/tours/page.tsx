@@ -148,7 +148,7 @@ export default function Tours() {
       id: 6,
       title: "Culinary Journey",
       location: "Colombo, Kandy, Galle",
-      image: "/images/cultural-show.png",
+      image: "/images/sl-food.webp",
       price: "$1,799",
       originalPrice: "$2,099",
       duration: "5 Days / 4 Nights",
@@ -629,7 +629,7 @@ export default function Tours() {
                 icon: <Utensils className="h-6 w-6 text-primary" />,
                 title: "Authentic Cuisine",
                 description:
-                  "Experience local flavors with included meals at authentic restaurants",
+                  "Experience Sri Lankan flavors & authentic restaurants",
               },
               {
                 icon: <Camera className="h-6 w-6 text-primary" />,

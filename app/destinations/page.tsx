@@ -83,7 +83,7 @@ export default function Destinations() {
       id: 4,
       name: "Galle Fort",
       country: "Sri Lanka",
-      image: "/images/hero-2.png",
+      image: "/images/galle-fort.webp",
       price: "$899",
       duration: "2 Days",
       rating: 4.6,

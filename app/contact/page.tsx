@@ -177,7 +177,7 @@ export default function Contact() {
                   className="bg-transparent text-white border-white/30 hover:bg-white/10"
                 >
                   <Calendar className="h-4 w-4 mr-2" />
-                  Book Consultation
+                  Book a consultation
                 </Button>
               </div>
             </div>

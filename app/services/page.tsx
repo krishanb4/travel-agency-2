@@ -263,7 +263,7 @@ export default function Services() {
               </p>
               <Button size="lg" variant="secondary">
                 <Phone className="h-4 w-4 mr-2" />
-                Get Consultation
+                Book a consultation
               </Button>
             </div>
           </div>
@@ -636,7 +636,7 @@ export default function Services() {
               <div className="flex flex-wrap gap-4 justify-center">
                 <Button size="lg" variant="secondary">
                   <Calendar className="h-4 w-4 mr-2" />
-                  Book Consultation
+                  Book a consultation
                 </Button>
                 <Button
                   size="lg"

@@ -304,7 +304,7 @@ export default function Home() {
                 About Beyond The Ocean
               </div>
               <h2 className="text-3xl font-bold tracking-tight mb-4">
-                Creating unforgettable travel experiences since 2007
+                Creating unforgettable travel experiences since 2020
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
@@ -313,7 +313,7 @@ export default function Home() {
                   preferences and dreams.
                 </p>
                 <p>
-                  With over 15 years of experience in the travel industry, we've
+                  With over the year of experience in the travel industry, we've
                   helped thousands of travelers explore the world's most
                   beautiful destinations with personalized itineraries and
                   premium services.

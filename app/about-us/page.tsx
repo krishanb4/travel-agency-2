@@ -26,19 +26,19 @@ export default function About() {
   const stats = [
     {
       icon: <Calendar className="h-8 w-8 text-primary" />,
-      number: "17+",
+      number: "4+",
       label: "Years Experience",
-      description: "Serving travelers since 2007",
+      description: "Serving travelers since 2020",
     },
     {
       icon: <Globe className="h-8 w-8 text-primary" />,
-      number: "100+",
+      number: "50+",
       label: "Destinations",
       description: "Countries and regions covered",
     },
     {
       icon: <Users className="h-8 w-8 text-primary" />,
-      number: "10,000+",
+      number: "1,000+",
       label: "Happy Travelers",
       description: "Satisfied customers worldwide",
     },
@@ -83,7 +83,7 @@ export default function About() {
       role: "Founder & CEO",
       image: "/images/adventure-couple.png",
       description:
-        "With over 20 years in the travel industry, Rajesh founded Beyond The Ocean with a vision to make premium travel accessible to everyone.",
+        "With extensive experience in the travel industry, Rajesh founded Beyond The Ocean with a vision to make premium travel accessible to everyone.",
       social: {
         linkedin: "#",
         twitter: "#",
@@ -118,40 +118,34 @@ export default function About() {
 
   const milestones = [
     {
-      year: "2007",
+      year: "2020",
       title: "Company Founded",
       description:
-        "Beyond The Ocean Travel established with a mission to provide exceptional travel experiences.",
+        "Beyond The Ocean Travel (Pvt) Ltd officially incorporated under PV 00224427 with a mission to provide exceptional travel experiences.",
     },
     {
-      year: "2010",
-      title: "100th Destination",
+      year: "2021",
+      title: "First Year Success",
       description:
-        "Expanded our reach to over 100 destinations worldwide, becoming a trusted global travel partner.",
+        "Successfully served our first 100 customers despite the challenging pandemic environment, establishing our reputation for safety and reliability.",
     },
     {
-      year: "2015",
-      title: "Digital Innovation",
+      year: "2022",
+      title: "Digital Platform Launch",
       description:
-        "Launched our digital platform, making travel planning more accessible and efficient.",
+        "Launched our comprehensive digital platform, making travel planning more accessible and efficient for our clients.",
     },
     {
-      year: "2018",
-      title: "Industry Recognition",
+      year: "2023",
+      title: "Destination Expansion",
       description:
-        "Received multiple industry awards for excellence in customer service and innovation.",
-    },
-    {
-      year: "2020",
-      title: "Incorporation",
-      description:
-        "Officially incorporated as Beyond The Ocean Travel (Pvt) Ltd under PV 00224427.",
+        "Expanded our reach to over 50 destinations worldwide, becoming a trusted travel partner for diverse international experiences.",
     },
     {
       year: "2024",
-      title: "10,000+ Travelers",
+      title: "1,000+ Travelers Milestone",
       description:
-        "Celebrated serving over 10,000 satisfied travelers with unforgettable experiences.",
+        "Celebrated serving over 1,000 satisfied travelers with unforgettable experiences and industry recognition.",
     },
   ];
 
@@ -223,7 +217,7 @@ export default function About() {
                 About Beyond The Ocean
               </h1>
               <p className="text-xl text-white/90 mb-8">
-                Creating unforgettable travel experiences since 2007, we are
+                Creating unforgettable travel experiences since 2020, we are
                 your trusted partner in exploring the world's most beautiful
                 destinations.
               </p>
@@ -243,10 +237,10 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Beyond The Ocean Travel (Pvt) Ltd. was incorporated under the
-                  Companies Act No. 7 of 2007 of Sri Lanka on 17th July 2020
-                  under registration number PV 00224427. However, our journey in
-                  the travel industry began much earlier in 2007.
+                  Beyond The Ocean Travel (Pvt) Ltd. was established in 2020
+                  with a clear mission to transform the travel experience for
+                  our clients. Founded with passion and dedication, we set out
+                  to create something special in Sri Lanka's tourism landscape.
                 </p>
                 <p>
                   We established our company to service the growing demand
@@ -255,9 +249,10 @@ export default function About() {
                   that go beyond the ordinary.
                 </p>
                 <p>
-                  Over the years, we have evolved from a small local agency to a
-                  comprehensive travel service provider, helping thousands of
-                  travelers explore the world with confidence and comfort.
+                  Since our founding in 2020, we have rapidly grown from a
+                  startup to a comprehensive travel service provider, helping
+                  thousands of travelers explore the world with confidence and
+                  comfort.
                 </p>
               </div>
             </div>
@@ -379,8 +374,8 @@ export default function About() {
               Our Journey
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Key milestones that have shaped our growth and success over the
-              years
+              Key milestones that have shaped our growth and success since our
+              incorporation
             </p>
           </div>
 
@@ -584,7 +579,7 @@ export default function About() {
               </div>
               <p className="text-gray-400 mb-4 leading-relaxed">
                 Beyond the Ocean Travel (Pvt) Ltd., creating unforgettable
-                travel experiences since 2007.
+                travel experiences since 2020.
               </p>
             </div>
             <div>
