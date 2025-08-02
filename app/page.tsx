@@ -330,7 +330,7 @@ export default function Home() {
                     <Star className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-semibold">25+</p>
+                    <p className="font-semibold">4+</p>
                     <p className="text-sm text-muted-foreground">
                       Years Experience
                     </p>

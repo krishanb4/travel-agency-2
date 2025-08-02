@@ -79,40 +79,44 @@ export default function About() {
 
   const team = [
     {
-      name: "Rajesh Fernando",
-      role: "Founder & CEO",
-      image: "/images/adventure-couple.png",
-      description:
-        "With extensive experience in the travel industry, Rajesh founded Beyond The Ocean with a vision to make premium travel accessible to everyone.",
-      social: {
-        linkedin: "#",
-        twitter: "#",
-        email: "rajesh@btotravel.lk",
-      },
+      name: "Thomas Adrian De Niese",
+      role: "CEO",
+      image: "/team/adrian.jpg",
     },
     {
-      name: "Priya Wijesinghe",
-      role: "Head of Operations",
-      image: "/images/cultural-show.png",
-      description:
-        "Priya ensures every trip runs smoothly with her exceptional organizational skills and attention to detail.",
-      social: {
-        linkedin: "#",
-        twitter: "#",
-        email: "priya@btotravel.lk",
-      },
+      name: "Fathima Sarah Roshanly",
+      role: "CFO",
+      image: "/team/sarah.jpg",
     },
     {
-      name: "Michael Silva",
-      role: "Senior Travel Consultant",
-      image: "/images/tropical-beach.png",
-      description:
-        "Michael's extensive knowledge of global destinations helps create perfect itineraries for our diverse clientele.",
-      social: {
-        linkedin: "#",
-        twitter: "#",
-        email: "michael@btotravel.lk",
-      },
+      name: "Radha De Niese",
+      role: "Director",
+      image: "/team/radha.jpg",
+    },
+    {
+      name: "Sherine Christina Naguleswaran",
+      role: "Manager",
+      image: "/team/sherine.jpg",
+    },
+    {
+      name: "Epron Rupesh Shanthakumar",
+      role: "Senior Travel Executive",
+      image: "/team/rupesh.jpg",
+    },
+    {
+      name: "Clement George Emma Perera",
+      role: "Travel Assistant",
+      image: "/team/george.jpg",
+    },
+    {
+      name: "Keith Fernando",
+      role: "UK Representative",
+      image: "/team/keith.jpg",
+    },
+    {
+      name: "Mohamed Rashid",
+      role: "France Representative",
+      image: "/team/rashid.jpg",
     },
   ];
 
@@ -427,10 +431,10 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {team.map((member, index) => (
                 <Card key={index} className="overflow-hidden bg-white">
-                  <div className="relative h-64">
+                  <div className="relative h-80">
                     <Image
                       src={member.image}
                       alt={member.name}
@@ -438,27 +442,11 @@ export default function About() {
                       className="object-cover"
                     />
                   </div>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold mb-1">
+                  <CardContent className="p-4 text-center">
+                    <h3 className="text-lg font-semibold mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-primary font-medium mb-3">
-                      {member.role}
-                    </p>
-                    <p className="text-muted-foreground mb-4">
-                      {member.description}
-                    </p>
-                    <div className="flex gap-3">
-                      <Button size="icon" variant="outline" className="w-8 h-8">
-                        <Linkedin className="h-4 w-4" />
-                      </Button>
-                      <Button size="icon" variant="outline" className="w-8 h-8">
-                        <Twitter className="h-4 w-4" />
-                      </Button>
-                      <Button size="icon" variant="outline" className="w-8 h-8">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                    </div>
+                    <p className="text-primary font-medium">{member.role}</p>
                   </CardContent>
                 </Card>
               ))}
