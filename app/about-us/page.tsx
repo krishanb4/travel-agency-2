@@ -518,6 +518,18 @@ export default function About() {
                 Department of the Registrar of Companies
               </p>
             </div>
+            <div className="flex flex-col items-center">
+              <Image
+                src="/images/green.png"
+                alt="Green Destinations"
+                width={150}
+                height={150}
+                className="mb-3"
+              />
+              <p className="text-sm text-center font-medium">
+                Green Destinations
+              </p>
+            </div>
           </div>
         </section>
 

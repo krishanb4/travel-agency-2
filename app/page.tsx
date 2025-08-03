@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
@@ -29,10 +32,22 @@ import {
   Gift,
   Settings,
   Check,
+  Menu,
+  X,
 } from "lucide-react";
 import { HeroCarousel } from "@/components/hero-carousel";
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   const heroImages = [
     "/images/hero-1.png",
     "/images/hero-2.png",
@@ -57,6 +72,15 @@ export default function Home() {
     "Step back in time and explore ancient civilizations and historic sites",
   ];
 
+  const navigationLinks = [
+    { href: "/", label: "Home" },
+    { href: "/destinations", label: "Destinations" },
+    { href: "/tours", label: "Tours" },
+    { href: "/services", label: "Services" },
+    { href: "/about-us", label: "About Us" },
+    { href: "/contact", label: "Contact" },
+  ];
+
   return (
     <div className="flex min-h-screen flex-col">
       {/* Header */}
@@ -71,69 +95,70 @@ export default function Home() {
               className="h-10 w-auto"
             />
           </div>
+
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            <Link
-              href="/"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Home
-            </Link>
-            <Link
-              href="/destinations"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Destinations
-            </Link>
-            <Link
-              href="/tours"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Tours
-            </Link>
-            <Link
-              href="/services"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Services
-            </Link>
-            <Link
-              href="/about-us"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              About Us
-            </Link>
-            <Link
-              href="/contact"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Contact
-            </Link>
+            {navigationLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium hover:text-primary transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
+
           <div className="flex items-center gap-4">
             <Button variant="outline" size="sm" className="hidden md:flex">
               Log In
             </Button>
             <Button size="sm">Book Now</Button>
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-6 w-6"
-              >
-                <line x1="4" x2="20" y1="12" y2="12" />
-                <line x1="4" x2="20" y1="6" y2="6" />
-                <line x1="4" x2="20" y1="18" y2="18" />
-              </svg>
+
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t bg-white/95 backdrop-blur-md">
+            <nav className="container py-4 space-y-2">
+              {navigationLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block py-2 text-sm font-medium hover:text-primary transition-colors"
+                  onClick={closeMobileMenu}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <div className="pt-4 border-t space-y-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full"
+                  onClick={closeMobileMenu}
+                >
+                  Log In
+                </Button>
+              </div>
+            </nav>
+          </div>
+        )}
       </header>
 
       <main className="flex-1">
@@ -521,6 +546,18 @@ export default function Home() {
               />
               <p className="text-sm text-center font-medium">
                 Department of the Registrar of Companies
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Image
+                src="/images/green.png"
+                alt="Green Destinations"
+                width={150}
+                height={150}
+                className="mb-3"
+              />
+              <p className="text-sm text-center font-medium">
+                Green Destinations
               </p>
             </div>
           </div>
