@@ -687,7 +687,7 @@ export default function Home() {
               <ul className="space-y-2 mb-8">
                 <li>
                   <Link
-                    href="#"
+                    href="/"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     HOME
@@ -695,7 +695,7 @@ export default function Home() {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/about-us"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     ABOUT US
@@ -703,31 +703,24 @@ export default function Home() {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/services"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     OUR SERVICES
                   </Link>
                 </li>
+
                 <li>
                   <Link
-                    href="#"
+                    href="/tours"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    OUR VALUES
+                    TOURS
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    ENDORSEMENTS
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
+                    href="/contact"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     CONTACT US
