@@ -434,13 +434,17 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {team.map((member, index) => (
                 <Card key={index} className="overflow-hidden bg-white">
-                  <div className="relative h-80">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover"
-                    />
+                  <div className="flex justify-center items-center p-6">
+                    {/* Circular image wrapper with background + shadow */}
+                    <div className="relative w-48 h-48 rounded-full overflow-hidden bg-gray-100 shadow-lg ring-2 ring-white">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover"
+                        sizes="192px"
+                      />
+                    </div>
                   </div>
                   <CardContent className="p-4 text-center">
                     <h3 className="text-lg font-semibold mb-1">
